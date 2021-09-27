@@ -2,6 +2,9 @@
 const axios = require('axios');
 const url = require('url');
 
+var chai = require('chai');
+var assert = chai.assert;
+
 async function makeGetRequest() {
 
     const baseURL = 'http://api.openweathermap.org/data/2.5/weather';
@@ -17,9 +20,9 @@ async function makeGetRequest() {
 
     let data = res.data;
     console.log(data);
-    console.log(res.status)
-    console.log(res.data.name);
-    console.log(res.data.sys.country);
+    assert.equal(200, res.status);
+    assert.equal(city, res.data.name);
+    assert.equal('GB', res.data.sys.country);
 }
 
 makeGetRequest();
