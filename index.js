@@ -1,4 +1,5 @@
-//const fullBaseURL = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=7488f5cd3fbbc91c90332c7d4e0af61a';
+//const fullBaseURL = 'http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=<<appid>>';
+require('dotenv/config');
 const axios = require('axios');
 const url = require('url');
 
@@ -10,7 +11,7 @@ async function makeGetRequest() {
     const baseURL = 'http://api.openweathermap.org/data/2.5/weather';
     const city = 'London';
     const countryCode = 'uk';
-    const appid = '7488f5cd3fbbc91c90332c7d4e0af61a'
+    const appid = process.env.APP_ID;
 
     let payload = { q: `${city},${countryCode}`, appid: `${appid}` };
 
@@ -23,6 +24,7 @@ async function makeGetRequest() {
     assert.equal(200, res.status);
     assert.equal(city, res.data.name);
     assert.equal('GB', res.data.sys.country);
+
 }
 
 makeGetRequest();
