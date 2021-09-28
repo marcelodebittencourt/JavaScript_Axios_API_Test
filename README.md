@@ -10,3 +10,9 @@
 3.  Run the command below to execute the test:
 
 > npm test
+
+# Main files
+
+* Test: https://github.com/marcelodebittencourt/YieldStreet_APIAutomationTest_JS_Axios/blob/master/test/tests.js
+
+* GitHub Actions: https://github.com/marcelodebittencourt/YieldStreet_APIAutomationTest_JS_Axios/blob/master/.github/workflows/main.yml
