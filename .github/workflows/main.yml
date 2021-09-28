@@ -2,8 +2,8 @@ name: Example of axios action
 on: [ push ]
 jobs:
     test-axios-action:
-        name: 'Perform REST API'
+        name: 'Perform REST API Test'
         runs-on: ubuntu-latest
         steps:
-            - name: Axios Action
-              uses: actionsflow/axios@v1
+            - name: Run test
+              run: npm run test
