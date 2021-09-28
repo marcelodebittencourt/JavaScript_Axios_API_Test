@@ -1,7 +1,6 @@
 name: Axios Tests
-
 on: [push]
-
+jobs:
     test-axios-action:
         name: 'Perform REST API'
         runs-on: ubuntu-latest    
