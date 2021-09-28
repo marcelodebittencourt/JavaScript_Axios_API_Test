@@ -1,4 +1,4 @@
-name: Example of axios action
+name: Axios actions
 on: [ push ]
 jobs:
     test-axios-action:
