@@ -1,38 +1,9 @@
 name: Example of axios action
-
 on: [ push ]
 jobs:
     test-axios-action:
         name: 'Perform REST API'
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-            - name: CallAPI
+            - name: Axios Action
               uses: actionsflow/axios@v1
-              with:
-                # The target URL
-                # Required: true if custom-config is not set
-                url: http://api.openweathermap.org/data/2.5/weather
-                
-                # The request method, basically it's one of GET|POST|PUT|PATCH
-                # Default is GET 
-                method: 'GET'
-
-                # List of response status codes to be accepted, else it will set the job to be failed
-                # If more than one value is needed, you can use comma(,) as seperator
-                # In this case if the response status code is not one of 200, 201 and 204, the job will be failed
-                # Default is 200,201,204
-                accept: 200
-
-                # Params can be passed through json object string 
-                # support escape string, use <<<${{env.TEST}}>>>
-                params: '{ "q": "London,uk", "param2": "<<<${{env.APP_ID}}>>>" }'
-                
-                # Request timeout (millisec)
-                # default is `0` (no timeout)
-                timeout: 10000
-
-                # If it is set to true, it will show the response log in the Github UI
-                # Default: false
-                is_debug: false
