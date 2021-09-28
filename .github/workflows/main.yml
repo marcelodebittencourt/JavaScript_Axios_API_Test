@@ -6,8 +6,9 @@ jobs:
         name: 'Perform REST API'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - name: 'Call API'
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: CallAPI
               uses: actionsflow/axios@v1
               with:
                 # The target URL
