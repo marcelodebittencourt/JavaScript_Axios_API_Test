@@ -1,0 +1,13 @@
+name: Axios Tests
+
+on: [push]
+
+    test-axios-action:
+        name: 'Perform REST API'
+        runs-on: ubuntu-latest    
+        steps:
+      - name: 'Call API'
+        uses: actionsflow/axios@v1
+        with:
+          build: npm run build
+          start: npm start
