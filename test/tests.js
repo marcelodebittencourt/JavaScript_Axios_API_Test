@@ -23,7 +23,7 @@ describe('Get OpenWeatherMap API testing', async function () {
         console.log(data);
         assert.equal(200, res.status);
         assert.equal(city, res.data.name);
-        assert.equal('GB', res.data.sys.country);
+        assert.equal('GBx', res.data.sys.country);
     })
 });
 
