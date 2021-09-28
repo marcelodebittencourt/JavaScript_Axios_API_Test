@@ -3,9 +3,9 @@ on: [push]
 jobs:
   test-axios-action:
     runs-on: ubuntu-latest    
-      steps:
-        - name: 'Call API'
+    steps:
+      - name: Call API
           uses: actionsflow/axios@v1
           with:
-             build: npm run build
-             start: npm start
+        - build: npm run build
+        - start: npm start
